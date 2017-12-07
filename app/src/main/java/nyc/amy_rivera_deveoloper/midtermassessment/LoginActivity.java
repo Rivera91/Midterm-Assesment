@@ -34,13 +34,14 @@ public class LoginActivity extends AppCompatActivity {
             String password = "password1234";
             @Override
             public void onClick(View view) {
-                SharedPreferences.Editor editor = login.edit();
+                EditText messageView = (EditText) findViewById(R.id.message);
                 String messageText = messageView.getText().toString();
                 
                 if((edit1.getText().toString() == email) && (edit2.getText().toString() == password)){
 
                     Intent intent = new Intent(this, ListActivity.class);
-                    intent.putExtra(ListActivity.EXTRA_MESSAGE, messageText);
+                    intent.putExtra(ListActivity.EXTRA_MESSAGE,messageText);
+                    startActivity(intent);
 
                 }
 
